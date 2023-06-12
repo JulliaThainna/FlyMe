@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Formulário de Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+  <div class="image-container">
+    <img src="img/logo-flyme.svg" alt="LOGO">
+</div>
+</header>
+    <div class="image-container">
+    <img src="img/booking-flight.svg" alt="Imagem da Tiazinha">
+</div>
+  
+  <div class="container">
+    <p id="frase">FlyMe é seu novo jeito de reservar passagens aéreas</p>
+    
+    <form>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" required>
+      <p><a id="esquecido" href="#">Esqueceu a senha?</a></p>
+
+      <input type="submit" value="Entrar">
+    </form>
+
+    
+    
+    <p> Não tem uma conta ?<a href="#">Cadastre-se</a></p>
+  </div>
+</body>
+</html>
