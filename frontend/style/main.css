@@ -1,0 +1,42 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: #3C5CAA;
+    margin: 1rem 1rem 1.5rem 1.5rem;
+}
+
+nav a img{
+    margin-right: 5rem;
+}
+
+.nav-link{
+    font-size: large;
+    color: #3C5CAA !important;
+}
+
+.nav-item{
+    margin-right: 5rem;
+}
+
+.nav-link.active{
+    font-weight: 600;
+}
+.nav-link:focus, .nav-link:hover{
+    font-weight: 500;
+}
+
+nav a img{
+    width: 12rem;
+}
+
+.navbar-toggler{
+    color: #3C5CAA;
+    border: none;
+}
+
+.navbar-toggler-icon{
+    background-image: none;
+}
+
+#icon-menu{
+    font-size: 1.9rem;
+}
