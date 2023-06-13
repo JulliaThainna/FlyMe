@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!--CSS and JS-->
     <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/gerenciar_sistema.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -42,59 +43,104 @@
     </nav>
 
 
-    <div class="container mt-5">
-      <ul class="nav nav-tabs" id="myTab">
+    <div class="container mt-5" id="myTable">
+      <ul class="nav nav-tabs px-2 pt-2" id="myTab">
         <li class="nav-item">
-          <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1">Tab 1</a>
+          <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1">Gerenciar Voos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2">Tab 2</a>
+          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2">Gerenciar Companhias Aéreas</a>
         </li>
       </ul>
-    
       <div class="tab-content mt-3" id="myTabContent">
         <div class="tab-pane fade show active" id="tab1">
+          <div class="container d-flex justify-content-end">
+            <button class="btn btn-primary m-3">
+              <i class="bi bi-plus-lg" style="color: #ffffff;"></i>
+              Adicionar novo voo
+            </button>
+            <button class="btn btn-danger m-3">
+              <i class="bi bi-trash-fill" style="color: #ffffff;"></i>
+              Excluir todos os voos
+            </button>
+          </div>
           <table class="table">
             <thead>
               <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-                <th>Header 3</th>
+                <th>Companhia aérea</th>
+                <th>Origem</th>
+                <th>Destino</th>
+                <th>Data/Horário</th>
+                <th>Duração</th>
+                <th>Assentos</th>
+                <th>Classe</th>
+                <th>Valor</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Data 1</td>
-                <td>Data 2</td>
-                <td>Data 3</td>
-              </tr>
-              <tr>
-                <td>Data 4</td>
-                <td>Data 5</td>
-                <td>Data 6</td>
+                <td>LATAM Airlines</td>
+                <td>Londrina</td>
+                <td>Argentina</td>
+                <td>16/07/2023 - 15h30</td>
+                <td>4h</td>
+                <td>45</td>
+                <td>
+                  <select class="form-select" id="classe">
+                    <option value="Econômica" selected>Econômica</option>
+                    <option value="Executiva">Executiva</option>
+                    <option value="Primeira classe">Primeira classe</option>
+                  </select>
+                </td>
+                <td>R$ 678,95</td>
+                <td>
+                  <a href="#"><i class="bi bi-pencil-fill" style="color: #3C5CAA;"></i></a>
+                  <a href="#" class="px-4">
+                    <i class="bi bi-trash-fill" style="color: rgb(237, 3, 3);"></i>
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
+
         <div class="tab-pane fade" id="tab2">
+          <div class="container d-flex justify-content-end">
+            <button class="btn btn-primary m-3">
+              <i class="bi bi-plus-lg" style="color: #ffffff;"></i>
+              Adicionar nova companhia aérea
+            </button>
+            <button class="btn btn-danger m-3">
+              <i class="bi bi-trash-fill" style="color: #ffffff;"></i>
+              Excluir todas as companhias aéreas
+            </button>
+          </div>
           <table class="table">
             <thead>
               <tr>
-                <th>Header A</th>
-                <th>Header B</th>
-                <th>Header C</th>
+                <th>Companhia aérea</th>
+                <th>CNPJ</th>
+                <th>Endereço sede</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Data A</td>
-                <td>Data B</td>
-                <td>Data C</td>
-              </tr>
-              <tr>
-                <td>Data D</td>
-                <td>Data E</td>
-                <td>Data F</td>
+                <td>LATAM Airlines</td>
+                <td>33.937.681/0001-78</td>
+                <td>Rua Atica, 673 Sala 5001, JARDIM BRASIL, 
+                  São Paulo - SP - 04634-042</td>
+                <td>fiscal@tam.com.br</td>
+                <td>(11) 5582-7222</td>
+                <td>
+                  <a href="#"><i class="bi bi-pencil-fill" style="color: #3C5CAA;"></i></a>
+                  <a href="#" class="px-4">
+                    <i class="bi bi-trash-fill" style="color: rgb(237, 3, 3);"></i>
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>
