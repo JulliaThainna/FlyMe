@@ -19,7 +19,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
+        <div class="container">
         <a class="navbar-brand" href="../html/home.html">
             <img src="../imgs/logo-flyme.svg" alt="FlyMe">
         </a>
@@ -43,40 +43,58 @@
       </nav>
     </nav>
 
-    <div class="d-flex justify-content-center align-items-center" style="height: 80vh">
+    <div class="d-flex justify-content-center align-items-center">
         <div class="container" id="bg-pesquisa">
             <h3 class="m-5 fw-semibold">Encontre voos disponíveis</h3>
-            <div class="container" id="bg-pesquisa-sub">
-                <div class="row p-5" class="inputs-pesquisa">
-                    <div class="col-md-3">
-                        
+            <form action="">   
+                <div class="container" id="bg-pesquisa-sub">
+                    <div class="row">
+                        <div class="col-md-3 pt-3">
+                            <img src="../imgs/destino.svg" alt="" style="width: 1.2rem;">
+                            <label for="destino" class="form-label">Destino</label>
+                            <input type="text" class="form-control" id="destino" required>
+                        </div>
+                        <div class="col-md-3 pt-3">
+                            <img src="../imgs/origem.svg" alt="" style="width: 1.2rem;">
+                            <label for="origem" class="form-label">Origem</label>
+                            <input type="text" class="form-control" id="origem" required>
+                        </div>
+                        <div class="col-md-3 pt-3">
+                            <img src="../imgs/ida.svg" alt="" style="width: 1.2rem;">
+                            <label for="data-ida" class="form-label">Ida</label>
+                            <input type="date" class="form-control" id="data-ida" required>
+                        </div>
+                        <div class="col-md-3 pt-3">
+                            <img src="../imgs/volta.svg" alt="" style="width: 1.2rem;">
+                            <label for="data-volta" class="form-label">Volta</label>
+                            <input type="date" class="form-control" id="data-volta">
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        TESTE 2
-                    </div>
-                    <div class="col-md-3">
-                        TESTE 3
-                    </div>
-                    <div class="col-md-3">
-                        TESTE 4
-                    </div>
-                </div>
 
-                <div class="row p-5" class="inputs-pesquisa">
-                    <div class="col-md-3">
-                        TESTE 1
-                    </div>
-                    <div class="col-md-3">
-                        TESTE 2
+                    <div class="row pb-3 justify-content-center">
+                        <div class="col-md-3 pt-3">
+                            <img src="../imgs/passageiros.svg" alt="" style="width: 1.2rem;">
+                            <label for="qtd-passageiros" class="form-label">Quantidade de passageiros</label>
+                            <input type="number" class="form-control" id="qtd-passageiros" required>
+                        </div> 
+                        <div class="col-md-3 pt-3">
+                            <img src="../imgs/classe.svg" alt="" style="width: 1.2rem;">
+                            <label for="classe" class="form-label">Classe</label>
+                            <select class="form-select" id="classe">
+                                <option value="Econômica" selected>Econômica</option>
+                                <option value="Executiva">Executiva</option>
+                                <option value="Primeira classe">Primeira classe</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+                <div class="container mt-4 d-flex justify-content-end">
+                    <button type="submit" class="btn">
+                        <i class="bi bi-chevron-right" id="btn-pesquisa"></i>
+                    </button>
+                </div>
             </div>
-            <div class="container mt-4 d-flex justify-content-end">
-                <button type="submit" class="btn">
-                    <i class="bi bi-chevron-right" id="btn-pesquisa"></i>
-                </button>
-            </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>
