@@ -1,12 +1,12 @@
 #bg-pesquisa{
-    width: 200rem;
+    width: 80rem;
     border-radius: 3rem;
     background-color: #3C5CAA;
     color: #243766;
     margin-top: 5rem;
 }
 
-#bg-pesquisa h3{
+#bg-pesquisa h4{
     color: #ffffff;
 }
 
