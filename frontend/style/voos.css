@@ -13,22 +13,6 @@ p{
     margin: 0;
 }
 
-#GOL{
-    color: #FF7E08;
-}
-
-#AZUL{
-    color: #243766;
-}
-
-#TAM{
-    color: #FF0808;
-}
-
-#LATAM{
-    color: #A108FF;
-}
-
 #content{
     background-color: #CDDDEE;
     border-radius: 2em;
@@ -51,6 +35,12 @@ p{
 .btn{
     background-color: #3C5CAA;
     color: white;
+}
+
+.btn:hover{
+    background-color: #243766;
+    color: white;
+
 }
 
 .popup-overlay {
