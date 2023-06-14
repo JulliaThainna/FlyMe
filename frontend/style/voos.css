@@ -1,0 +1,55 @@
+h1{
+    font-size: 1.7rem;
+    color: #243766;
+}
+
+h2{
+    font-size: 1.3rem;
+    color: #243766;
+}
+
+p{
+    color: black;
+    margin: 0;
+}
+
+#GOL{
+    color: #FF7E08;
+}
+
+#AZUL{
+    color: #243766;
+}
+
+#TAM{
+    color: #FF0808;
+}
+
+#LATAM{
+    color: #A108FF;
+}
+
+#content{
+    background-color: #CDDDEE;
+    border-radius: 2em;
+    margin-right: 1em;
+    margin-left: 1.5em;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#container-btn{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container-btn{
+    text-align: center;
+}
+
+.btn{
+    background-color: #3C5CAA;
+    color: white;
+}
+
