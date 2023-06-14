@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlyMe - Home</title>
+    <link rel="icon" href="../imgs/icon.png">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!--CSS and JS-->
+    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/home.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+        <a class="navbar-brand" href="../html/home.html">
+            <img src="../imgs/logo-flyme.svg" alt="FlyMe">
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="bi bi-list" id="icon-menu"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../html/home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Minhas Reservas</a>
+              </li>
+              <li class="nav-item m-0">
+                <a class="nav-link" href="#">Perfil</a>
+              </li>
+            </ul>
+          </div>
+            
+      </nav>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h1 class="text-center">Meu Perfil</h1>
+          <form>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control rounded-5" id="nome">
+            </div>
+            <div class="mb-3">
+              <label for="cpf" class="form-label">CPF</label>
+              <input type="number" class="form-control rounded-5" id="cpf">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control rounded-5" id="email">
+            </div>
+            <div class="mb-3">
+              <label for="senha" class="form-label">Senha</label>
+              <input type="password" class="form-control rounded-5" id="senha">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="data" class="form-label">Data de Nasc</label>
+                <input type="date" class="form-control rounded-5" id="data">
+              </div>
+              <div class="col-md-6">
+                <label for="genero" class="form-label">Gênero</label>
+                <select class="form-control rounded-5" name="genero" id="genero">
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="tel" class="form-label">Telefone</label>
+              <input type="tel" class="form-control rounded-5" id="tel">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="button" class="btn btn-primary rounded-4 mt-5" data-bs-toggle="modal" data-bs-target="#editarModal">Editar</button>
+              </div>
+              <div class="col-md-6">
+                <button type="button" class="btn btn-danger rounded-4 mt-5">Excluir</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editarModalLabel">Editar Conta</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="text" class="form-control rounded-5" id="nome-modal">
+                </div>
+                <div class="mb-3">
+                  <label for="cpf" class="form-label">CPF</label>
+                  <input type="number" class="form-control rounded-5" id="cpf-modal">
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control rounded-5" id="email-modal">
+                </div>
+                <div class="mb-3">
+                  <label for="senha" class="form-label">Senha</label>
+                  <input type="password" class="form-control rounded-5" id="senha-modal">
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="data" class="form-label">Data de Nasc</label>
+                    <input type="date" class="form-control rounded-5" id="data-modal">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="genero" class="form-label">Gênero</label>
+                    <select class="form-control rounded-5" name="genero" id="genero-modal">
+                      <option value="Masculino">Masculino</option>
+                      <option value="Feminino">Feminino</option>
+                      <option value="Outro">Outro</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="tel" class="form-label">Telefone</label>
+                  <input type="tel" class="form-control rounded-5" id="tel-modal">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Salvar Alterações</button>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    
+</body>
+</html>
