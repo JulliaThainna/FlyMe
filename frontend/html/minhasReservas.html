@@ -18,6 +18,7 @@
     <!--CSS and JS-->
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/reservas.css">
+
     <title>Minhas Reservas</title>
 </head>
 <body>
@@ -72,10 +73,10 @@
           <p> Valor pago: R$ 450,00</p>
           <div class="row" id="container-btn">
             <div class="col-md-3 mb-4 pt-3">
-              <button type="submit" class="btn rounded-3"><i class="bi bi-trash-fill"></i></button>
+              <button type="submit" class="btn delete"><i class="bi bi-trash-fill"></i></button>
             </div>
             <div class="col-md-3 mb-4 pt-3" id="btn">
-              <button type="submit" class="btn rounded-3">Editar</i></button>
+              <button type="submit" class="btn edit">Editar</button>
             </div>
           </div>
         </div>
@@ -92,16 +93,75 @@
           <p> Valor pago: R$ 240,00</p>
           <div class="row" id="container-btn">
             <div class="col-md-3 mb-4 pt-3">
-              <button type="submit" class="btn rounded-3"><i class="bi bi-trash-fill"></i></button>
+              <button type="submit" class="btn delete"><i class="bi bi-trash-fill"></i></button>
             </div>
             <div class="col-md-3 mb-4 pt-3">
-              <button type="submit" class="btn rounded-3">Editar</i></button>
+              <button type="submit" class="btn edit">Editar</i></button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!--------------------Divs de popup----------------------------------> 
+        
+        <!--Div do popup de deletar reserva-->
+        <div class="popup-overlay" id="popupDelete">
+          <div class="popup-contentDelete">
+              <h2>Deseja cancelar está reserva "Lodrina -> São Paulo"?</h2>
+              <p>Se você cancelar sua reserva, 
+                seu reembolso será realizado em até 7 dias pela companhia aérea escolhida
+                de acordo com  a forma de pagamento realizada</p>
+              <p>Observação: Se sua viagem tem ida e volta, e você deseja cancelar toda a viagem,
+                não esqueça de cancelar o voo de retorno.
+              </p>
+              <button id="cancel-popupDelete">Fechar</button>
+              <button id="confirm-buttonDelete">Confirmar</button>
+          </div>
+      </div>
+
+      
+    <div class="popup-overlay" id="confirm-popupDelete">
+      <div class="popup-contentDelete">
+          <h2>Reserva cancelada com sucesso!</h2>
+          <p>Observação: Se a viagem tem ida e volta, e você deseja cancelar toda a viagem,
+            não se esqueça de cancelar o voo de retorno.
+          </p>
+          <button id="close-confirm-button">Fechar</button>
+      </div>
+  </div>
+
+      <!--Div de popup de editar reserva-->
+      <div class="popup-overlay" id="popupEdit">
+        <div class="popup-contentEdit">
+            <h2>Editar a reserva "Londrina -> São Paulo" </h2>
+            <p class="fw-bold">Detalhes do voo:</p>
+            <p>Local: Aeroporto de Londrina</p>
+            <p>Data e Hora: 25/06/2023 - 15h30</p>
+            <p>Classe: Executiva</p>
+            <p>Duração do voo: 1h15</p>
+            <p>Valor pago: R$450,00</p>
+            <label for="qntVoos">Quantidade de Voos</label>
+            <input type="number" id="qntVoos" name="qntVoos">
+            <p>Observação: Só é possivel editar a quantidade de passageiros. Em outros casos, 
+              é necessario cancelar a reserva e fazer outra.</p>
+            <button id="cancel-popupEdit">Fechar</button>
+            <button id="confirm-buttonEdit">Confirmar</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="confirm-popupEdit">
+      <div class="popup-contentEdit">
+          <h2>Reserva editada com sucesso!</h2>
+          <p>Observação: Se a sua viagem tem ida e volta, e você deseja editar
+            os passageiros de toda a viagem, terá que fazer manualmente.
+          </p>
+          <button id="close-confirm-buttonEdit">Fechar</button>
+      </div>
+  </div>
+
+  <!--------------------------------------------------------------------------->
+  
     <div class="container mt-5 pt-3">
       <h2 class="fw-bold">
         Reservas Finalizadas
@@ -169,5 +229,8 @@
         </div>
       </div>
     </div>
+
+  
+    <script src="../JS/scriptReseras.js"></script>
 </body>
 </html>

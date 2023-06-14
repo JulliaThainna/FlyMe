@@ -70,7 +70,7 @@
             <p> Passageiros: 2</p>
             <p class="fw-bold">R$ 240,00</p>
             <div class="mt-2 mb-2" id="container-btn">
-                  <button type="submit" class="btn rounded-3">Reservar</button>
+                  <button type="submit" class="btn reserva">Reservar</button>
             </div>
           </div>
     
@@ -85,9 +85,22 @@
             <p> Passageiros: 2</p>
             <p class="fw-bold">R$ 240,00</p>
             <div class="mt-2 mb-2" id="container-btn">
-                <button type="submit" class="btn rounded-3">Reservar</button>
+                <button type="submit" class="btn reserva">Reservar</button>
           </div>
           </div>
+
+  <!----------------Divs de popup para reservar o Voo------------------------------->
+
+          <div class="popup-overlay" id="popupReserva">
+            <div class="popup-contentReserva">
+                <h2>Reserva adicionada com sucesso!</h2>
+                <p>Observação: Se sua iagem tem ida e volta, 
+                  deve reservar a ida e a volta manualmente</p>
+                <button id="cancel-popup">Fechar</button>
+                <button id="IrParaReservas">Ir para "Minhas Reservas"</button>
+            </div>
+        </div>
+          
 
           <div class="col-md-3 pt-3 text-center" id="content">
             <img src="../imgs/origem.svg" alt="" style="width: 3rem; ">
@@ -173,5 +186,8 @@
                 <button type="submit" class="btn rounded-3">Reservar</button>
           </div>
           </div>
+
+        <script src="../JS/scriptVoos.js"></script>
+
 </body>
 </html>
