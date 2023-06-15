@@ -24,3 +24,7 @@
 #btn-pesquisa:hover{
     color: #243766;
 }
+
+#bg-pesquisa .form-control{
+    background-color: white;
+}

@@ -12,3 +12,16 @@ body{
 .logo-flyme{
     width: 25rem;
 }
+
+.botao-login{
+    width: 10rem;
+}
+
+.botao-login:hover{
+    background-color: #243766;
+    color: #ffffff;
+}
+
+span:hover{
+    color: #243766
+}
