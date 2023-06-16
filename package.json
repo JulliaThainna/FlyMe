@@ -1,0 +1,20 @@
+{
+  "name": "flyme---backup",
+  "version": "1.0.0",
+  "description": "Repositório para o projeto integrador entre as disciplinas de Desenvolvimento Web Básico e Tópicos Especiais de Programação.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "consign": "^0.1.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-form-data": "^2.0.22",
+    "mysql": "^2.18.1"
+  }
+}
