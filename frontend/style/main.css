@@ -1,0 +1,43 @@
+#content{
+    background-color: #CDDDEE;
+    border-radius: 2em;
+}
+#content p{
+    color: #243766;
+    margin: 0;
+}
+#content img{
+    width: 3rem;
+}
+
+.btn{
+    background-color: #3C5CAA;
+    color: white;
+}
+.btn:hover{
+    background-color: #243766;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 auto;
+      width: auto;
+    }
+}
+
+.botao-danger{
+    background-color: rgb(255, 0, 0); color: white;
+}
+.botao-danger:hover{
+    background-color: #cc0000;
+}
+
+.botao-fechar{
+    background-color: #CDDDEE; 
+    color: #3C5CAA;
+}
+.botao-fechar:hover{
+    background-color: #a4b1be;
+    color: #3C5CAA;
+}

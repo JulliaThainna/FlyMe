@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!--CSS and JS-->
     <link rel="stylesheet" href="../style/navbar.css">
-    <link rel="stylesheet" href="../style/reservas.css">
+    <link rel="stylesheet" href="../style/main.css">
 
     <title>Minhas Reservas</title>
 </head>
@@ -36,7 +36,7 @@
                 <a class="nav-link" href="../html/home.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../html/minhas_reservas.html">Minhas Reservas</a>
+                <a class="nav-link" href="../html/gerenciar_reservas.html">Minhas Reservas</a>
             </li>
             <li class="nav-item m-0">
                 <a class="nav-link" href="../html/gerenciar_perfil.html">Perfil</a>
@@ -157,31 +157,29 @@
           </div>
       </div>
     </div>
-
   </div>
 
-    </div>
-
-    <!--Modal-->
-    <div class="modal fade" id="modal-reservar" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Adicionar reserva</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-            <h4 class="fw-semibold">Reserva adicionada com sucesso!</h4>
-            <p>Observação: Se a sua viagem tem ida e volta, você deve reservar a ida e a volta manualmente.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn" style="background-color: #CDDDEE; color: #3C5CAA;" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn">
-              <a style="text-decoration: none; color: white;" href="../html/minhas_reservas.html">Ir para minhas reservas</a>
-            </button>
-          </div>
+  <!--Modals-->
+  <!--Modal reservar-->
+  <div class="modal fade" id="modal-reservar" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar reserva</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h4 class="fw-semibold">Reserva adicionada com sucesso!</h4>
+          <p>Observação: Se a sua viagem tem ida e volta, você deve reservar a ida e a volta manualmente.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn">
+            <a style="text-decoration: none; color: white;" href="../html/gerenciar_reservas.html">Ir para minhas reservas</a>
+          </button>
         </div>
       </div>
     </div>
+  </div>
 </body>
 </html>

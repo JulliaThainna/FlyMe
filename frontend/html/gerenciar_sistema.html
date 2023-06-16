@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlyMe - Gerenciar voos</title>
+    <title>FlyMe - Gerenciar sistema</title>
     <link rel="icon" href="../imgs/icon.png">
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -15,135 +15,361 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!--CSS and JS-->
     <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/gerenciar_sistema.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="../html/home.html">
-            <img src="../imgs/logo-flyme.svg" alt="FlyMe">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><i class="bi bi-list" id="icon-menu"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="../html/home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="../html/gerenciar_sistema.html">Gerenciar sistema</a>
-            </li>
-            <li class="nav-item m-0">
-                <a class="nav-link" href="../html/gerenciar_perfil.html">Perfil</a>
-            </li>
-            </ul>
-        </div>
-    </nav>
-
-
-    <div class="container mt-5" id="myTable">
-      <ul class="nav nav-tabs px-2 pt-2" id="myTab">
-        <li class="nav-item">
-          <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1">Gerenciar Voos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2">Gerenciar Companhias Aéreas</a>
-        </li>
-      </ul>
-      <div class="tab-content mt-3" id="myTabContent">
-        <div class="tab-pane fade show active" id="tab1">
-          <div class="container d-flex justify-content-end">
-            <button class="btn btn-primary m-3">
-              <i class="bi bi-plus-lg" style="color: #ffffff;"></i>
-              Adicionar novo voo
-            </button>
-            <button class="btn btn-danger m-3">
-              <i class="bi bi-trash-fill" style="color: #ffffff;"></i>
-              Excluir todos os voos
-            </button>
-          </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Companhia aérea</th>
-                <th>Origem</th>
-                <th>Destino</th>
-                <th>Data/Horário</th>
-                <th>Duração</th>
-                <th>Assentos</th>
-                <th>Classe</th>
-                <th>Valor</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>LATAM Airlines</td>
-                <td>Londrina</td>
-                <td>Argentina</td>
-                <td>16/07/2023 - 15h30</td>
-                <td>4h</td>
-                <td>45</td>
-                <td>
-                  <select class="form-select" id="classe">
-                    <option value="Econômica" selected>Econômica</option>
-                    <option value="Executiva">Executiva</option>
-                    <option value="Primeira classe">Primeira classe</option>
-                  </select>
-                </td>
-                <td>R$ 678,95</td>
-                <td>
-                  <a href="#"><i class="bi bi-pencil-fill" style="color: #3C5CAA;"></i></a>
-                  <a href="#" class="px-4">
-                    <i class="bi bi-trash-fill" style="color: rgb(237, 3, 3);"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="tab-pane fade" id="tab2">
-          <div class="container d-flex justify-content-end">
-            <button class="btn btn-primary m-3">
-              <i class="bi bi-plus-lg" style="color: #ffffff;"></i>
-              Adicionar nova companhia aérea
-            </button>
-            <button class="btn btn-danger m-3">
-              <i class="bi bi-trash-fill" style="color: #ffffff;"></i>
-              Excluir todas as companhias aéreas
-            </button>
-          </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Companhia aérea</th>
-                <th>CNPJ</th>
-                <th>Endereço sede</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>LATAM Airlines</td>
-                <td>33.937.681/0001-78</td>
-                <td>Rua Atica, 673 Sala 5001, JARDIM BRASIL, 
-                  São Paulo - SP - 04634-042</td>
-                <td>fiscal@tam.com.br</td>
-                <td>(11) 5582-7222</td>
-                <td>
-                  <a href="#"><i class="bi bi-pencil-fill" style="color: #3C5CAA;"></i></a>
-                  <a href="#" class="px-4">
-                    <i class="bi bi-trash-fill" style="color: rgb(237, 3, 3);"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <a class="navbar-brand" href="../html/home.html">
+          <img src="../imgs/logo-flyme.svg" alt="FlyMe">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="bi bi-list" id="icon-menu"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="../html/home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../html/gerenciar_sistema.html">Gerenciar sistema</a>
+          </li>
+          <li class="nav-item m-0">
+              <a class="nav-link" href="../html/gerenciar_perfil.html">Perfil</a>
+          </li>
+          </ul>
     </div>
+  </nav>
+
+
+  <div class="container mt-5" id="myTable">
+    <ul class="nav nav-tabs px-2 pt-2" id="myTab">
+      <li class="nav-item">
+        <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1">Voos</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2">Companhias Aéreas</a>
+      </li> -->
+    </ul>
+    <div class="tab-content mt-3" id="myTabContent">
+      <div class="tab-pane fade show active" id="tab1">
+        <div class="container d-flex justify-content-end">
+          <button type="button" class="btn m-3" data-bs-toggle="modal" data-bs-target="#modal-adicionarVoo">
+            <i class="bi bi-plus-lg" style="color: #ffffff;"></i>
+            Adicionar novo voo
+          </button>
+          <button type="button" class="btn m-3 botao-danger" data-bs-toggle="modal" data-bs-target="#modal-deletarTodosVoos">
+            <i class="bi bi-trash-fill" style="color: #ffffff;"></i>
+            Deletar todos os voos
+          </button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Companhia aérea</th>
+              <th>Origem</th>
+              <th>Destino</th>
+              <th>Data/Horário</th>
+              <th>Duração</th>
+              <th>Assentos</th>
+              <th>Classe</th>
+              <th>Valor</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LATAM Airlines</td>
+              <td>Londrina</td>
+              <td>Argentina</td>
+              <td>16/07/2023 - 15h30</td>
+              <td>4h</td>
+              <td>45</td>
+              <td>
+                Econômica
+                <!-- <select class="form-select" id="classe">
+                  <option value="Econômica" selected>Econômica</option>
+                  <option value="Executiva">Executiva</option>
+                  <option value="Primeira classe">Primeira classe</option>
+                </select> -->
+              </td>
+              <td>R$ 678,95</td>
+              <td>
+
+                <a style="text-decoration: none;" href="#" data-bs-toggle="modal" data-bs-target="#modal-alterarVoo">
+                  <i class="bi bi-pencil-fill" style="color: #3C5CAA;"></i>
+                </a>
+                <a style="text-decoration: none;" href="#" class="px-4" data-bs-toggle="modal" data-bs-target="#modal-deletarVoo">
+                  <i class="bi bi-trash-fill" style="color: rgb(237, 3, 3);"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- <div class="tab-pane fade" id="tab2">
+        <div class="container d-flex justify-content-end">
+          <button class="btn btn-primary m-3">
+            <i class="bi bi-plus-lg" style="color: #ffffff;"></i>
+            Adicionar nova companhia aérea
+          </button>
+          <button class="btn btn-danger m-3">
+            <i class="bi bi-trash-fill" style="color: #ffffff;"></i>
+            Excluir todas as companhias aéreas
+          </button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Companhia aérea</th>
+              <th>CNPJ</th>
+              <th>Endereço sede</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LATAM Airlines</td>
+              <td>33.937.681/0001-78</td>
+              <td>Rua Atica, 673 Sala 5001, JARDIM BRASIL, 
+                São Paulo - SP - 04634-042</td>
+              <td>fiscal@tam.com.br</td>
+              <td>(11) 5582-7222</td>
+              <td>
+                <a href="#"><i class="bi bi-pencil-fill" style="color: #3C5CAA;"></i></a>
+                <a href="#" class="px-4">
+                  <i class="bi bi-trash-fill" style="color: rgb(237, 3, 3);"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+  </div>
+
+  <!--Modals-->
+  <!--Modal adicionar voo (Talvez alterar pra enviar arquivo JSON)-->
+  <div class="modal fade" id="modal-adicionarVoo" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar novo voo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mt-3">
+              <label for="ca" class="form-label">Companhia aérea</label>
+              <input type="text" class="form-control rounded-5" id="ca">
+            </div>
+            <div class="mt-3">
+              <label for="origem" class="form-label">Origem</label>
+              <input type="text" class="form-control rounded-5" id="origem">
+            </div>
+            <div class="mt-3">
+              <label for="destino" class="form-label">Destino</label>
+              <input type="text" class="form-control rounded-5" id="destino">
+            </div>
+            <div class="mt-3">
+              <label for="data-ida" class="form-label">Data/Horário</label>
+              <input type="datetime" class="form-control rounded-5" id="data-ida">
+            </div>
+            <div class="mt-3">
+              <label for="duracao" class="form-label">Duração</label>
+              <input type="text" class="form-control rounded-5" id="duracao">
+            </div>
+            <div class="mt-3">
+              <label for="assentos" class="form-label">Assentos</label>
+              <input type="number" class="form-control rounded-5" id="assentos">
+            </div>
+            <div class="mt-3">
+              <label for="classe" class="form-label">Classe</label>
+              <input type="text" class="form-control rounded-5" id="classe">
+            </div>
+            <div class="mt-3">
+              <label for="valor" class="form-label">Valor</label>
+              <input type="text" class="form-control rounded-5" id="valor">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-vooAdicionado">
+            Adicionar voo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal voo adicionado-->
+  <div class="modal fade" id="modal-vooAdicionado" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Voo adicionado com sucesso!</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal deletar todos os voos-->
+  <div class="modal fade" id="modal-deletarTodosVoos" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Deletar todos os voos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h5>Você tem certeza que deseja deletar TODOS os voos?</h5>
+          <p class="text-center">Cuidado, essa ação é irreversível!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn botao-danger" data-bs-toggle="modal" data-bs-target="#modal-voosDeletados">
+            Deletar todos os voos
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal voos deletados-->
+  <div class="modal fade" id="modal-voosDeletados" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Todos os voos foram deletados com sucesso!</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal editar voo-->
+  <div class="modal fade" id="modal-alterarVoo" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editar voo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mt-3">
+              <label for="ca" class="form-label">Companhia aérea</label>
+              <input type="text" class="form-control rounded-5" id="ca" disabled>
+            </div>
+            <div class="mt-3">
+              <label for="origem" class="form-label">Origem</label>
+              <input type="text" class="form-control rounded-5" id="origem" disabled>
+            </div>
+            <div class="mt-3">
+              <label for="destino" class="form-label">Destino</label>
+              <input type="text" class="form-control rounded-5" id="destino" disabled>
+            </div>
+            <div class="mt-3">
+              <label for="data-ida" class="form-label">Data/Horário</label>
+              <input type="datetime" class="form-control rounded-5" id="data-ida">
+            </div>
+            <div class="mt-3">
+              <label for="duracao" class="form-label">Duração</label>
+              <input type="text" class="form-control rounded-5" id="duracao">
+            </div>
+            <div class="mt-3">
+              <label for="assentos" class="form-label">Assentos</label>
+              <input type="number" class="form-control rounded-5" id="assentos">
+            </div>
+            <div class="mt-3">
+              <label for="classe" class="form-label">Classe</label>
+              <input type="text" class="form-control rounded-5" id="classe" disabled>
+            </div>
+            <div class="mt-3">
+              <label for="valor" class="form-label">Valor</label>
+              <input type="text" class="form-control rounded-5" id="valor" disabled>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-vooAlterado">
+            Editar voo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal voo alterado-->
+  <div class="modal fade" id="modal-vooAlterado" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Voo alterado com sucesso!</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal deletar voo-->
+  <div class="modal fade" id="modal-deletarVoo" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Deletar voo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h5>Você tem certeza que deseja deletar esse voo?</h5>
+          <p class="text-center">Cuidado, essa ação é irreversível!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn botao-danger" data-bs-toggle="modal" data-bs-target="#modal-vooDeletado">
+            Deletar voo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal voo deletado-->
+  <div class="modal fade" id="modal-vooDeletado" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Voo deletado com sucesso!</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
