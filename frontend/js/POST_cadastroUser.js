@@ -1,16 +1,21 @@
-function fazPost(url, body){
+function fazPost(url, body) {
     let request = new XMLHttpRequest();
     request.open("POST", url, true);
     request.setRequestHeader("Content-type", "application/json");
-    request.send(JSON.stringify(body)); 
-    request.onload = function(){
-        console.log(this.responseText);
+    request.onload = function() {
+      if (request.status === 200) {
+        let modalSucesso = new bootstrap.Modal(document.getElementById('modal-cadastroUser'));
+        modalSucesso.show();
+        console.log("Cadastro realizado com sucesso.");
+      } else {
+        console.log("Erro ao fazer o cadastro.");
+      }
     };
-    return request.responseText;
-}
-
-function cadastrarUsuario(){
-    let url = "http://localhost:3000/login";
+    request.send(JSON.stringify(body));
+  }
+  
+  function cadastrarUsuario() {
+    let url = "http://localhost:3000/cadastro";
     let nome = document.getElementById("nome").value;
     let cpf = document.getElementById("cpf").value;
     let email = document.getElementById("email").value;
@@ -18,14 +23,18 @@ function cadastrarUsuario(){
     let data_nasc = document.getElementById("data_nasc").value;
     let tel = document.getElementById("tel").value;
     let genero = document.getElementById("genero").value;
-    body = {
-        "nome" : nome,
-        "cpf": cpf,
-        "email": email,
-        "senha": senha,
-        "data_nasc": data_nasc,
-        "telefone": tel,
-        "genero": genero
-    }
+    let body = {
+      "nome" : nome,
+      "cpf": cpf,
+      "email": email,
+      "senha": senha,
+      "data_nasc": data_nasc,
+      "telefone": tel,
+      "genero": genero
+    };
     fazPost(url, body); 
-}
+  }
+  
+  function abrirHome(){
+    window.location.href = "home.html";
+  }

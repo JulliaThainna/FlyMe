@@ -1,5 +1,5 @@
 const cadastroUser = require("../model/cadastroUser-model");
-const rota = '/login';
+const rota = '/cadastro';
 
 module.exports = app => { 
     app.post(rota, (req, res) => {
