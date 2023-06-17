@@ -1,8 +1,8 @@
 const conexao = require("../config/database");
 
-class User{
-    cadastra(infos, res){
-        let sql = "INSERT INTO users SET ?";
+class Voo{
+    adiciona(infos, res){
+        let sql = "INSERT INTO voos SET ?";
         conexao.query(sql, infos, (erro, resultado) => {
             if(erro){
                 res.status(400).json(erro);
@@ -15,4 +15,4 @@ class User{
     }
 }
 
-module.exports = new User;
+module.exports = new Voo;
