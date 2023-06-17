@@ -30,21 +30,21 @@
 
     <div class="col-md-5 px-5 mt-5">
       <h1>FlyMe é seu novo jeito de reservar passagens aéreas</h1>
-      <form>
+      <form onsubmit="return false;">
         <div class="mb-3 mt-5">
           <label for="email" class="form-label">Email</label>
           <input type="email" class="form-control rounded-5" id="email">
         </div>
         <div class="mb-3">
           <label for="senha" class="form-label">Senha</label>
-          <input type="senha" class="form-control rounded-5" id="senha">
+          <input type="password" class="form-control rounded-5" id="senha">
         </div>
         <div class="d-flex justify-content-center align-items-center">
             <button type="submit" class="botao-login btn btn-primary rounded-4 mt-5">Entrar</button>
         </div>
         <h6 class="text-center mt-5" style="font-size: 0.7rem;">Não tem uma conta? 
           <a style="text-decoration: none; color: #3C5CAA;" href="../html/cadastro.html">
-            <span class="fw-bold">Cadastre-se</span>
+            <span class="fw-bold" onclick="fazerLogin()">Cadastre-se</span>
           </a>
         </h6>
       </form>

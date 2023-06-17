@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/gerenciar_sistema.css">
+    <script src="../js/POST_adicionarVoo.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -160,44 +161,48 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form onsubmit="return false;">
             <div class="mt-3">
               <label for="ca" class="form-label">Companhia aérea</label>
-              <input type="text" class="form-control rounded-5" id="ca">
+              <input type="text" class="form-control rounded-5" id="ca" required>
             </div>
             <div class="mt-3">
               <label for="origem" class="form-label">Origem</label>
-              <input type="text" class="form-control rounded-5" id="origem">
+              <input type="text" class="form-control rounded-5" id="origem" required>
             </div>
             <div class="mt-3">
               <label for="destino" class="form-label">Destino</label>
-              <input type="text" class="form-control rounded-5" id="destino">
+              <input type="text" class="form-control rounded-5" id="destino" required>
             </div>
             <div class="mt-3">
               <label for="data-ida" class="form-label">Data/Horário</label>
-              <input type="datetime" class="form-control rounded-5" id="data-ida">
+              <input type="datetime-local" class="form-control rounded-5" id="data-ida" required>
             </div>
             <div class="mt-3">
-              <label for="duracao" class="form-label">Duração</label>
-              <input type="text" class="form-control rounded-5" id="duracao">
+              <label for="duracao" class="form-label">Duração (em horas)</label>
+              <input type="number" min="0" class="form-control rounded-5" id="duracao" required>
             </div>
             <div class="mt-3">
               <label for="assentos" class="form-label">Assentos</label>
-              <input type="number" class="form-control rounded-5" id="assentos">
+              <input type="number" min="0" class="form-control rounded-5" id="assentos" required>
             </div>
             <div class="mt-3">
               <label for="classe" class="form-label">Classe</label>
-              <input type="text" class="form-control rounded-5" id="classe">
+              <select class="form-select" id="classe" required style="background-color: #E6E7E8; border-radius: 2rem;">
+                <option value="Econômica" selected>Econômica</option>
+                <option value="Executiva">Executiva</option>
+                <option value="Primeira">Primeira classe</option>
+              </select>
             </div>
             <div class="mt-3">
               <label for="valor" class="form-label">Valor</label>
-              <input type="text" class="form-control rounded-5" id="valor">
+              <input type="number" min="0" step="any" class="form-control rounded-5" id="valor" required>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal-vooAdicionado">
+          <button type="button" class="btn" onclick="adicionarVoo()">
             Adicionar voo
           </button>
         </div>
