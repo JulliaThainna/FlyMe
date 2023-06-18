@@ -2,3 +2,21 @@
     background-color: transparent;
     color: #243766;
 }
+
+#tabela-voos{
+    color: #243766;   
+}
+#tabela-voos tbody tr{
+    padding: 10px;
+}
+#tabela-voos a{
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1rem;
+}
+#tabela-voos .bi-pencil-fill{
+    color: #3C5CAA;
+}
+#tabela-voos .bi-trash-fill{
+    color: rgb(237, 3, 3);
+}
