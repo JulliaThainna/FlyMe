@@ -13,6 +13,19 @@ class Voo{
             }
         });
     }
+
+    lista(res){
+        const sql = 'SELECT * FROM voos'
+        conexao.query(sql, (erro, resultado) => {
+            if(erro){
+                res.status(400).json(erro);
+                console.log(erro);
+            }
+            else{
+                res.status(200).json(resultado);
+            }
+        });
+    }
 }
 
 module.exports = new Voo;
