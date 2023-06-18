@@ -19,9 +19,9 @@ function fazPost(url, body){
   function adicionarVoo(){
     let url = "http://localhost:3000/gerenciarVoos";
     let ca = document.getElementById("ca").value;
-    let destino = document.getElementById("destino").value;
     let origem = document.getElementById("origem").value;
-    let data_horario = document.getElementById("data_horario").value;
+    let destino = document.getElementById("destino").value;
+    let data_horario = document.getElementById("data-horario").value;
     let duracao = document.getElementById("duracao").value;
     let assentos = document.getElementById("assentos").value;
     let classe = document.getElementById("classe").value;

@@ -1,5 +1,5 @@
 const voo = require("../model/voo-model");
-const rota = '/gerenciarVoos';
+const rota = "/gerenciarVoos";
 
 module.exports = app => { 
     app.post(rota, (req, res) => {

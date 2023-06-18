@@ -13,8 +13,7 @@ function fazLinha(voo){
     let colCA = document.createElement("td");
     let colOrigem = document.createElement("td");
     let colDestino = document.createElement("td");
-    let colData = document.createElement("td");
-    let colHorario = document.createElement("td");
+    let colData_horario = document.createElement("td");
     let colDuracao = document.createElement("td");
     let colAssentos = document.createElement("td");
     let colClasse = document.createElement("td");
@@ -24,8 +23,7 @@ function fazLinha(voo){
     colCA.innerHTML = voo.companhia_aerea;
     colOrigem.innerHTML = voo.origem;
     colDestino.innerHTML = voo.destino;
-    colData.innerHTML = dataFormatada(voo.data_horario);
-    colHorario.innerHTML = horaFormatada(voo.data_horario);
+    colData_horario.innerHTML = formatarDataHora(voo.data_horario);
     colDuracao.innerHTML = voo.duracao;
     colAssentos.innerHTML = voo.assentos;
     colClasse.innerHTML = voo.classe;
@@ -34,29 +32,28 @@ function fazLinha(voo){
     linha.appendChild(colCA);
     linha.appendChild(colOrigem);
     linha.appendChild(colDestino);
-    linha.appendChild(colData);
-    linha.appendChild(colHorario);
+    linha.appendChild(colData_horario);
     linha.appendChild(colDuracao);
     linha.appendChild(colAssentos);
     linha.appendChild(colClasse);
     linha.appendChild(colValor);
 
-    let editar = document.createElement('a');
-    editar.setAttribute('data-bs-toggle', 'modal');
-    editar.setAttribute('data-bs-target', '#modal-alterarVoo');
-    let icon = document.createElement('i');
-    icon.setAttribute('class', 'bi bi-pencil-fill');
+    let editar = document.createElement("a");
+    editar.setAttribute("data-bs-toggle", "modal");
+    editar.setAttribute("data-bs-target", "#modal-alterarVoo");
+    let icon = document.createElement("i");
+    icon.setAttribute("class", "bi bi-pencil-fill");
     editar.appendChild(icon);
 
     colAcoes.appendChild(editar);
     linha.appendChild(colAcoes);
     tbody.appendChild(linha);
 
-    deletar = document.createElement('a');
-    deletar.setAttribute('data-bs-toggle', 'modal');
-    deletar.setAttribute('data-bs-target', '#modal-deletarVoo');
-    icon = document.createElement('i');
-    icon.setAttribute('class', 'bi bi-trash-fill');
+    deletar = document.createElement("a");
+    deletar.setAttribute("data-bs-toggle", "modal");
+    deletar.setAttribute("data-bs-target", "#modal-deletarVoo");
+    icon = document.createElement("i");
+    icon.setAttribute("class", "bi bi-trash-fill");
     deletar.appendChild(icon);
 
     colAcoes.appendChild(deletar);
@@ -66,40 +63,17 @@ function fazLinha(voo){
     return tbody;
 }
 
-function dataFormatada(data_horario){
-    data_horario = data_horario.toLocaleString();
-
-    let partes = data_horario.split("T");
-    let data = partes[0];
-
-    // Separar os componentes da data
-    let componentesData = data.split("-");
-    let ano = componentesData[0];
-    let mes = componentesData[1];
-    let dia = componentesData[2];
-
-    // Formatar a data no formato "dd/mm/yyyy"
-    let dataFormatada = `${dia}/${mes}/${ano}`;
-
-    return dataFormatada;
-}
-
-function horaFormatada(data_horario){
-    let partes = data_horario.split("T");
-    let hora = partes[1];
-
-    // Separar os componentes da hora
-    let componentesHora = hora.split(":");
-    let horas = componentesHora[0];
-    let minutos = componentesHora[1];
-    let segundos = componentesHora[2];
-
-    // Formatar a hora
-    let horaFormatada = `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
-
-    return horaFormatada;
-}
-
+function formatarDataHora(dataHora) {
+    const data = new Date(dataHora);
+    const ano = data.getFullYear();
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const dia = String(data.getDate()).padStart(2, "0");
+    const horas = String(data.getHours()).padStart(2, "0");
+    const minutos = String(data.getMinutes()).padStart(2, "0");
+  
+    return `${dia}/${mes}/${ano} - ${horas}:${minutos}`;
+  }
+  
 
 function main(){
     let dados = fazGet("http://localhost:3000/gerenciarVoos");
