@@ -4,7 +4,6 @@ function fazDelete(url){
     request.onload = function(){
         if (request.status === 200){
             console.log("Todos os voos foram deletados com sucesso.");
-            location.reload();
             fecharModal("modal-deletarTodosVoos");
             abrirModal("modal-voosDeletados");
         }

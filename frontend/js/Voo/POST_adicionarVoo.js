@@ -8,7 +8,6 @@ function fazPost(url, body){
 
       fecharModal("modal-adicionarVoo");
       abrirModal("modal-vooAdicionado");
-      location.reload();
     }
     else{
       console.log("Erro ao cadastrar voo.");

@@ -17,8 +17,9 @@ function fazLinha(voo){
   let tabela = document.getElementById("tabela-voos");
 
   let tbody = tabela.querySelector("tbody");
-
   let linha = document.createElement("tr");
+  let colId = document.createElement("td");
+  colId.setAttribute("id", `voo-id${voo.id}`);
   let colCA = document.createElement("td");
   let colOrigem = document.createElement("td");
   let colDestino = document.createElement("td");
@@ -29,6 +30,7 @@ function fazLinha(voo){
   let colValor = document.createElement("td");
   let colAcoes = document.createElement("td");
 
+  colId.innerHTML = voo.id;
   colCA.innerHTML = voo.companhia_aerea;
   colOrigem.innerHTML = voo.origem;
   colDestino.innerHTML = voo.destino;
@@ -38,6 +40,7 @@ function fazLinha(voo){
   colClasse.innerHTML = voo.classe;
   colValor.innerHTML = voo.valor;
 
+  linha.appendChild(colId);
   linha.appendChild(colCA);
   linha.appendChild(colOrigem);
   linha.appendChild(colDestino);
@@ -46,12 +49,14 @@ function fazLinha(voo){
   linha.appendChild(colAssentos);
   linha.appendChild(colClasse);
   linha.appendChild(colValor);
-
+  
   let editar = document.createElement("a");
   editar.setAttribute("data-bs-toggle", "modal");
   editar.setAttribute("data-bs-target", "#modal-alterarVoo");
+  editar.setAttribute("onclick", `getId(${voo.id})`);
   let icon = document.createElement("i");
   icon.setAttribute("class", "bi bi-pencil-fill");
+  icon.setAttribute("data-id", `botao-editar`);
   editar.appendChild(icon);
 
   colAcoes.appendChild(editar);
@@ -63,6 +68,7 @@ function fazLinha(voo){
   deletar.setAttribute("data-bs-target", "#modal-deletarVoo");
   icon = document.createElement("i");
   icon.setAttribute("class", "bi bi-trash-fill");
+  icon.setAttribute("id", "botao-deletar");
   deletar.appendChild(icon);
 
   colAcoes.appendChild(deletar);
