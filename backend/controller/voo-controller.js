@@ -9,4 +9,8 @@ module.exports = app => {
     app.get(rota, (req, res) => {
         voo.lista(res);
     })
+
+    app.delete(rota, (req, res) => {
+        voo.deletaTodos(res);
+    })
 }
