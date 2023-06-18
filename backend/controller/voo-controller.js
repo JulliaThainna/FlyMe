@@ -13,4 +13,8 @@ module.exports = app => {
     app.delete(rota, (req, res) => {
         voo.deletaTodos(res);
     })
+
+    app.put(rota, (req, res) => {
+        voo.edita(req.body, res);
+    })
 }

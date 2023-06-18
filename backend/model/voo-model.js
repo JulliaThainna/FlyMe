@@ -27,10 +27,22 @@ class Voo{
         });
     }
 
-    
     deletaTodos(res){
         const sql = "DELETE FROM voos"
         conexao.query(sql, (erro, resultado) => {
+            if(erro){
+                res.status(400).json(erro);
+                console.log(erro);
+            }
+            else{
+                res.status(200).json(resultado);
+            }
+        });
+    }
+
+    edita(req, res){
+        const sql = "UPDATE voos SET data_horario = ?, duracao = ?, assentos = ? WHERE id = ?"
+        conexao.query(sql, [req.data_horario, req.duracao, req.assentos, req.id], (erro, resultado) => {
             if(erro){
                 res.status(400).json(erro);
                 console.log(erro);
