@@ -52,6 +52,19 @@ class Voo{
             }
         });
     }
+
+    deleta(req, res){
+        const sql = "DELETE FROM voos WHERE id = ?"
+        conexao.query(sql, [req.id], (erro, resultado) => {
+            if(erro){
+                res.status(400).json(erro);
+                console.log(erro);
+            }
+            else{
+                res.status(200).json(resultado);
+            }
+        });
+    }
 }
 
 module.exports = new Voo;

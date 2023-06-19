@@ -14,6 +14,10 @@ module.exports = app => {
         voo.deletaTodos(res);
     })
 
+    app.delete(`${rota}/:id`, (req, res) => {
+        voo.deleta(req.body, res);
+    })
+
     app.put(rota, (req, res) => {
         voo.edita(req.body, res);
     })

@@ -1,4 +1,4 @@
-function fazDelete(url){
+function fazDeleteTodosVoos(url){
     let request = new XMLHttpRequest();
     request.open("DELETE", url, false);
     request.onload = function(){
@@ -17,7 +17,7 @@ function fazDelete(url){
 
 function deletarTodosVoos(){
     let url = "http://localhost:3000/gerenciarVoos";
-    fazDelete(url); 
+    fazDeleteTodosVoos(url); 
 }
 
 function abrirModal(modal){

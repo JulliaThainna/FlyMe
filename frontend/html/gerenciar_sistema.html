@@ -21,6 +21,7 @@
     <script src="../js/Voo/POST_adicionarVoo.js"></script>
     <script src="../js/Voo/DELETE_deletarTodosVoos.js"></script>
     <script src="../js/Voo/PUT_editarVoo.js"></script>
+    <script src="../js/Voo/DELETE_deletarVoo.js"></script>
 
 </head>
 <body onload="main()">
@@ -290,7 +291,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-          <button type="button" class="btn botao-danger" data-bs-toggle="modal" data-bs-target="#modal-vooDeletado">
+          <button type="button" class="btn botao-danger" onclick="deletarVoo();">
             Deletar voo
           </button>
         </div>
@@ -309,7 +310,7 @@
           <h4>Voo deletado com sucesso!</h4>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal" onclick="location.reload();">Fechar</button>
         </div>
       </div>
     </div>

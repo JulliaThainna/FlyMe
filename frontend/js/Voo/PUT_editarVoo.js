@@ -18,7 +18,7 @@ function fazPut(url, body){
     request.send(JSON.stringify(body));
 }
 
-function getId(voo_id){
+function getIdEditar(voo_id){
     voo_id = localStorage.setItem("id", voo_id);
 }
 

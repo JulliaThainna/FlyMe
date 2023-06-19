@@ -53,7 +53,7 @@ function fazLinha(voo){
   let editar = document.createElement("a");
   editar.setAttribute("data-bs-toggle", "modal");
   editar.setAttribute("data-bs-target", "#modal-alterarVoo");
-  editar.setAttribute("onclick", `getId(${voo.id})`);
+  editar.setAttribute("onclick", `getIdEditar(${voo.id})`);
   let icon = document.createElement("i");
   icon.setAttribute("class", "bi bi-pencil-fill");
   icon.setAttribute("data-id", `botao-editar`);
@@ -66,6 +66,7 @@ function fazLinha(voo){
   deletar = document.createElement("a");
   deletar.setAttribute("data-bs-toggle", "modal");
   deletar.setAttribute("data-bs-target", "#modal-deletarVoo");
+  deletar.setAttribute("onclick", `getIdDeletar(${voo.id})`);
   icon = document.createElement("i");
   icon.setAttribute("class", "bi bi-trash-fill");
   icon.setAttribute("id", "botao-deletar");
