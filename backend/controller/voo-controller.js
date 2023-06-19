@@ -10,6 +10,11 @@ module.exports = app => {
         voo.lista(res);
     })
 
+    app.get(`${rota}/:id`, (req, res) => {
+        const id = req.params.id;
+        voo.listaUm(id, res);
+    })
+
     app.delete(rota, (req, res) => {
         voo.deletaTodos(res);
     })

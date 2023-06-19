@@ -19,13 +19,3 @@ function deletarTodosVoos(){
     let url = "http://localhost:3000/gerenciarVoos";
     fazDeleteTodosVoos(url); 
 }
-
-function abrirModal(modal){
-    modal = new bootstrap.Modal(getModal(modal));
-    modal.show();
-  }
-
-function fecharModal(modal){
-    modal = bootstrap.Modal.getInstance(getModal(modal));
-    modal.hide();
-}

@@ -34,7 +34,7 @@ function fazLinha(voo){
   colCA.innerHTML = voo.companhia_aerea;
   colOrigem.innerHTML = voo.origem;
   colDestino.innerHTML = voo.destino;
-  colData_horario.innerHTML = formatarDataHora(voo.data_horario);
+  colData_horario.innerHTML = formatarDataHora(voo.data_horario, 0);
   colDuracao.innerHTML = voo.duracao;
   colAssentos.innerHTML = voo.assentos;
   colClasse.innerHTML = voo.classe;
@@ -53,7 +53,7 @@ function fazLinha(voo){
   let editar = document.createElement("a");
   editar.setAttribute("data-bs-toggle", "modal");
   editar.setAttribute("data-bs-target", "#modal-alterarVoo");
-  editar.setAttribute("onclick", `getIdEditar(${voo.id})`);
+  editar.setAttribute("onclick", `getIdEditar(${voo.id}); mainEditar();`);
   let icon = document.createElement("i");
   icon.setAttribute("class", "bi bi-pencil-fill");
   icon.setAttribute("data-id", `botao-editar`);
@@ -78,18 +78,6 @@ function fazLinha(voo){
   
   return tbody;
 }
-
-function formatarDataHora(dataHora) {
-  const data = new Date(dataHora);
-  const ano = data.getFullYear();
-  const mes = String(data.getMonth() + 1).padStart(2, "0");
-  const dia = String(data.getDate()).padStart(2, "0");
-  const horas = String(data.getHours()).padStart(2, "0");
-  const minutos = String(data.getMinutes()).padStart(2, "0");
-
-  return `${dia}/${mes}/${ano} - ${horas}:${minutos}`;
-}
-  
 
 function main(){
   let dados = fazGet("http://localhost:3000/gerenciarVoos");

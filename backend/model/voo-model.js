@@ -27,6 +27,19 @@ class Voo{
         });
     }
 
+    listaUm(id, res){
+        const sql = "SELECT companhia_aerea, origem, destino, data_horario, duracao, assentos, classe, valor FROM voos WHERE id = ?"
+        conexao.query(sql, [id], (erro, resultado) => {
+            if(erro){
+                res.status(400).json(erro);
+                console.log(erro);
+            }
+            else{
+                res.status(200).json(resultado);
+            }
+        });
+    }
+
     deletaTodos(res){
         const sql = "DELETE FROM voos"
         conexao.query(sql, (erro, resultado) => {

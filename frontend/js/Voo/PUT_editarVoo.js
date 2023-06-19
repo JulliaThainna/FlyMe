@@ -1,5 +1,3 @@
-var voo_id;
-
 function fazPut(url, body){
     let request = new XMLHttpRequest();
     request.open("PUT", url, true);
@@ -19,7 +17,7 @@ function fazPut(url, body){
 }
 
 function getIdEditar(voo_id){
-    voo_id = localStorage.setItem("id", voo_id);
+    localStorage.setItem("id", voo_id);
 }
 
 function editarVoo(){
@@ -35,16 +33,6 @@ function editarVoo(){
         "duracao": duracao,
         "assentos": assentos
     };
-
+    
     fazPut(url, body); 
-}
-
-function fecharModal(modal){
-    modal = bootstrap.Modal.getInstance(getModal(modal));
-    modal.hide();
-}
-  
-function getModal(nomeModal){
-let modal = document.getElementById(nomeModal);
-return modal
 }

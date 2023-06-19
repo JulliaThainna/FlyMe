@@ -18,10 +18,12 @@
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/gerenciar_sistema.css">
     <!--JS-->
+    <script src="../js/Voo/utilitarios.js"></script>
     <script src="../js/Voo/POST_adicionarVoo.js"></script>
     <script src="../js/Voo/DELETE_deletarTodosVoos.js"></script>
     <script src="../js/Voo/PUT_editarVoo.js"></script>
     <script src="../js/Voo/DELETE_deletarVoo.js"></script>
+    <script src="../js/Voo/GET_visualizarVoo.js"></script>
 
 </head>
 <body onload="main()">
@@ -216,7 +218,7 @@
           <form>
             <div class="mt-3">
               <label for="caModal" class="form-label">Companhia aérea</label>
-              <input type="text" class="form-control rounded-5" id="caModal" disabled>
+              <input type="text" class="form-control rounded-5" id="caModal" readonly>
             </div>
             <div class="mt-3">
               <label for="origemModal" class="form-label">Origem</label>
@@ -228,7 +230,7 @@
             </div>
             <div class="mt-3">
               <label for="data-horarioModal" class="form-label">Data/Horário</label>
-              <input type="datetime-local" class="form-control rounded-5" id="data-horarioModal">
+              <input type="datetime-local" value="2017-06-01T08:30" class="form-control rounded-5" id="data-horarioModal">
             </div>
             <div class="mt-3">
               <label for="duracaoModal" class="form-label">Duração</label>

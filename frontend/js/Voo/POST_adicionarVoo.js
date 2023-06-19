@@ -38,22 +38,3 @@ function adicionarVoo(){
   };
   fazPost(url, body); 
 }
-  
-function abrirHome(){
-  window.location.href = "home.html";
-}
-
-function abrirModal(modal){
-  modal = new bootstrap.Modal(getModal(modal));
-  modal.show();
-}
-
-function fecharModal(modal){
-  modal = bootstrap.Modal.getInstance(getModal(modal));
-  modal.hide();
-}
-
-function getModal(nomeModal){
-  let modal = document.getElementById(nomeModal);
-  return modal
-}
