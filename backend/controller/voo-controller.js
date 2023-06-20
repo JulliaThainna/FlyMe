@@ -27,4 +27,8 @@ module.exports = app => {
     app.put(rota, (req, res) => {
         voo.edita(req.body, res);
     })
+
+    app.post("/pesquisarVoos", (req, res) => {
+        voo.pesquisa(req.body, res);
+    })
 }

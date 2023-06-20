@@ -78,6 +78,19 @@ class Voo{
             }
         });
     }
+
+    pesquisa(req, res){
+        let sql = "SELECT * FROM voos WHERE origem = ? AND destino = ? AND DATE(data_horario) = ? AND classe = ?";
+        conexao.query(sql, [req.origem, req.destino, req.data_ida, req.classe], (erro, resultado) => {
+            if(erro){
+                res.status(400).json(erro);
+                console.log(erro);
+            }
+            else{
+                res.status(200).json(resultado);
+            }
+        });
+    }
 }
 
 module.exports = new Voo;

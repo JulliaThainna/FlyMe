@@ -42,8 +42,14 @@ function verificarDataHoraFutura(flag) {
     if(flag === 0){
         inputDataHora = document.getElementById("data-horario");
     }
-    else{
+    else if(flag === 1){
         inputDataHora = document.getElementById("data-horarioModal");
+    }
+    else if(flag === 2){
+        inputDataHora = document.getElementById("data-ida");
+    }
+    else if(flag === 3){
+        inputDataHora = document.getElementById("data-volta");
     }
     let dataHoraSelecionada = new Date(inputDataHora.value);
     let dataHoraAtual = new Date();
