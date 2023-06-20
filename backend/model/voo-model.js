@@ -66,9 +66,9 @@ class Voo{
         });
     }
 
-    deleta(req, res){
+    deleta(id, res){
         const sql = "DELETE FROM voos WHERE id = ?"
-        conexao.query(sql, [req.id], (erro, resultado) => {
+        conexao.query(sql, [id], (erro, resultado) => {
             if(erro){
                 res.status(400).json(erro);
                 console.log(erro);

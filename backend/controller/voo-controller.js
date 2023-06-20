@@ -20,7 +20,8 @@ module.exports = app => {
     })
 
     app.delete(`${rota}/:id`, (req, res) => {
-        voo.deleta(req.body, res);
+        const id = req.params.id;
+        voo.deleta(id, res);
     })
 
     app.put(rota, (req, res) => {

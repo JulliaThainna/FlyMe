@@ -36,3 +36,21 @@ function getIdDeletar(voo_id){
 function abrirHome(){
     window.location.href = "home.html";
 }
+
+function verificarDataHoraFutura(flag) {
+    let inputDataHora;
+    if(flag === 0){
+        inputDataHora = document.getElementById("data-horario");
+    }
+    else{
+        inputDataHora = document.getElementById("data-horarioModal");
+    }
+    let dataHoraSelecionada = new Date(inputDataHora.value);
+    let dataHoraAtual = new Date();
+  
+    if(dataHoraSelecionada <= dataHoraAtual){
+        inputDataHora.setCustomValidity("Por favor, selecione uma data e hora no futuro");
+        return false;
+    }
+    return true;
+}

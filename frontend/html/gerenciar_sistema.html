@@ -101,7 +101,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form onsubmit = "return false;">
             <div class="mt-3">
               <label for="ca" class="form-label">Companhia aérea</label>
               <input type="text" class="form-control rounded-5" id="ca" required>
@@ -138,13 +138,13 @@
               <label for="valor" class="form-label">Valor</label>
               <input type="number" min="0" step="any" class="form-control rounded-5" id="valor" required>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn" onclick="adicionarVoo()">
+                Adicionar voo
+              </button>
+            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-          <button type="button" class="btn" onclick="adicionarVoo()">
-            Adicionar voo
-          </button>
         </div>
       </div>
     </div>
@@ -215,7 +215,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form onsubmit = "return false;">
             <div class="mt-3">
               <label for="caModal" class="form-label">Companhia aérea</label>
               <input type="text" class="form-control rounded-5" id="caModal" readonly>
@@ -248,15 +248,14 @@
               <label for="valorModal" class="form-label">Valor</label>
               <input type="text" class="form-control rounded-5" id="valorModal" disabled>
             </div>
-          </form>
-
-          <p style="font-size: 0.7rem;" class="mt-5">Observação: Só é possível alterar a data/horário, duração e quantidade de assentos do voo.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
-          <button type="button" class="btn" onclick="editarVoo();">
-            Editar voo
-          </button>
+            <p style="font-size: 0.7rem;" class="mt-5">Observação: Só é possível alterar a data/horário, duração e quantidade de assentos do voo.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn botao-fechar" data-bs-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn" onclick="editarVoo();">
+                Editar voo
+              </button>
+            </form>
         </div>
       </div>
     </div>

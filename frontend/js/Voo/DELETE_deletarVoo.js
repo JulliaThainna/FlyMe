@@ -1,7 +1,7 @@
-function fazDeleteVoo(url, body){
+function fazDeleteVoo(url){
     let request = new XMLHttpRequest();
     request.open("DELETE", url, true);
-    request.setRequestHeader("Content-type", "application/json");
+    request.send();
     request.onload = function(){
         if (request.status === 200){
             console.log("Voo deletado com sucesso.");
@@ -13,16 +13,10 @@ function fazDeleteVoo(url, body){
             console.log("Erro ao deletar voo.");
         }
     };
-    request.send(JSON.stringify(body));
+    return request.responseText;
 }
 
 function deletarVoo(){
-    let url = "http://localhost:3000/gerenciarVoos/id";
-
     let id = localStorage.getItem("id");
-    let body = {
-        "id": id,
-    };
-
-    fazDeleteVoo(url, body); 
+    fazDeleteVoo(`http://localhost:3000/gerenciarVoos/${id}`); 
 }

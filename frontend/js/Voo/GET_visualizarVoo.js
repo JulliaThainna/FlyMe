@@ -16,5 +16,7 @@ function mainEditar(){
   let voo = JSON.parse(dados);
   voo.forEach(element => {
     visualizaInfosVoo(element);
-}); 
+  }); 
 }
+
+// ESSE CÓDIGO É PARA TRAZER AS INFOS DOS CAMPOS PARA O PUT_editarVoo

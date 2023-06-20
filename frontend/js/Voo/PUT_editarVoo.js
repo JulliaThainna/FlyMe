@@ -24,7 +24,12 @@ function editarVoo(){
     let url = "http://localhost:3000/gerenciarVoos";
 
     let id = localStorage.getItem("id");
-    let data_horario = document.getElementById("data-horarioModal").value;
+    let data_horario;
+    let dataVerificada = verificarDataHoraFutura(1);
+    if(dataVerificada == false){
+      return;
+    }
+    data_horario = document.getElementById("data-horarioModal").value;
     let duracao = document.getElementById("duracaoModal").value;
     let assentos = document.getElementById("assentosModal").value;
     let body = {

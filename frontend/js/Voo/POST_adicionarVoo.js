@@ -21,7 +21,12 @@ function adicionarVoo(){
   let ca = document.getElementById("ca").value;
   let origem = document.getElementById("origem").value;
   let destino = document.getElementById("destino").value;
-  let data_horario = document.getElementById("data-horario").value;
+  let data_horario;
+  let dataVerificada = verificarDataHoraFutura(0);
+  if(dataVerificada == false){
+    return;
+  }
+  data_horario = document.getElementById("data-horario").value;
   let duracao = document.getElementById("duracao").value;
   let assentos = document.getElementById("assentos").value;
   let classe = document.getElementById("classe").value;
