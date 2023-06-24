@@ -53,7 +53,7 @@ function verificarDataHoraFutura(flag) {
     }
     let dataHoraSelecionada = new Date(inputDataHora.value);
     let dataHoraAtual = new Date();
-  
+    
     if(dataHoraSelecionada <= dataHoraAtual){
         inputDataHora.setCustomValidity("Por favor, selecione uma data e hora no futuro");
         return false;
